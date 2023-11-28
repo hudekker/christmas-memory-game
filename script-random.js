@@ -35,5 +35,5 @@ function setRandomBackground() {
 }
 
 // Call the function to set the random background when the page loads
-setRandomBackground();
+// setRandomBackground();
 
