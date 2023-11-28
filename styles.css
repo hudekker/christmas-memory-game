@@ -198,4 +198,8 @@ h1,
   .display-text {
     margin-top: 0px;
   }
+
+  .display-text {
+    padding-top: 0;
+  }
 }
