@@ -9,8 +9,20 @@
 </head>
 
 <body id="background-img">
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div class="centered-text">
+        <p>恭喜恭喜！成功了</p>
+        <p class="no-display">猜測次數： <span id="guess-counter">0</span></p>
+      </div>
+    </div>
+  </div>
+  <h1>歐就是你</h1>
+  <!-- Modal HTML Structure -->
 
   <div class="memory-game">
+
     <div class="memory-card" data-framework="1">
       <img class="front-face" src="assets/p1.png" alt="1">
       <img class="back-face" src="https://pbs.twimg.com/media/DR2HYgFVAAAwKpE.jpg" alt="Card Back">
@@ -72,9 +84,15 @@
     </div>
 
   </div>
-  <!-- Add more card elements here with different data-framework values -->
+
+  <div id="guesses-display" class="display-text">猜測次數: 0</div>
+
+  <button id="play-again-btn" class="play-again-btn no-display" onclick="playAgain()">再玩一次</button>
+
+
+
+  <script src="script-random.js"></script>
   <script src="script.js"></script>
-  <!-- <script src="script-crop.js"></script> -->
 </body>
 
 </html>
