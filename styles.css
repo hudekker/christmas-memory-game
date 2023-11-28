@@ -14,7 +14,9 @@ body {
 .memory-game {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
+  grid-gap: 5px;
+  margin-top: 10vh;
+
   /* background-image: url('your-memory-game-background.jpg');
   background-size: cover; */
 }
@@ -63,6 +65,6 @@ body {
 /* Media query for screens with a maximum width of 600 pixels (smartphones) */
 @media (max-width: 600px) {
   .memory-game {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
