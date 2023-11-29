@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
   <title>Christmas Memory Match</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 
 <body id="background-img">
@@ -15,11 +16,29 @@
       <div class="centered-text">
         <p>恭喜恭喜！</p>
         <p class="no-display2">猜測次數： <span id="guess-counter">0</span></p>
-        <button id="play-again-btn" class="play-again-btn no-display2" onclick="playAgain()">再玩一次</button>
+        <button id="play-again-btn" class="btn play-again-btn" onclick="playAgain()">再玩一次</button>
+        <button id="view-btn" class="btn view-btn" onclick="openGallery()">欣賞畫作</button>
+        <button id="download-btn" class="btn download-btn" onclick="download()">下載畫畫</button>
       </div>
     </div>
   </div>
-  <h1>歐就是你</h1>
+
+  <!-- Image Gallery Modal -->
+  <div id="galleryModal" class="modal">
+    <span class="close" onclick="closeGallery()">&times;</span>
+    <div class="gallery-content">
+      <img src="assets/p1.png" alt="Image 1" class="gallery-image no-display">
+      <img src="assets/p2.png" alt="Image 2" class="gallery-image no-display">
+      <img src="assets/p3.png" alt="Image 3" class="gallery-image no-display">
+      <img src="assets/p4.png" alt="Image 4" class="gallery-image no-display">
+      <img src="assets/p5.png" alt="Image 5" class="gallery-image no-display">
+      <img src="assets/p6.png" alt="Image 6" class="gallery-image no-display">
+    </div>
+    <button class="arrow-btn left-arrow" onclick="prevImage()"><i class="fas fa-chevron-left"></i></button>
+    <button class="arrow-btn right-arrow" onclick="nextImage()"><i class="fas fa-chevron-right"></i></button>
+  </div>
+
+  <h1>歐就是你!</h1>
   <!-- Modal HTML Structure -->
 
   <div class="memory-game">
@@ -34,7 +53,7 @@
       <img class="back-face" src="https://pbs.twimg.com/media/DR2HYgFVAAAwKpE.jpg" alt="Card Back">
     </div>
 
-    <div class="memory-card" data-framework="2">
+    <!-- <div class="memory-card" data-framework="2">
       <img class="front-face" src="assets/p2.png" alt="2">
       <img class="back-face" src="https://pbs.twimg.com/media/DR2HYgFVAAAwKpE.jpg" alt="Card Back">
     </div>
@@ -82,17 +101,16 @@
     <div class="memory-card" data-framework="6">
       <img class="front-face" src="assets/p6.png" alt="4">
       <img class="back-face" src="https://pbs.twimg.com/media/DR2HYgFVAAAwKpE.jpg" alt="Card Back">
-    </div>
+    </div> -->
 
   </div>
 
   <div id="guesses-display" class="display-text">猜測次數: 0</div>
 
-  <button id="play-again-btn" class="play-again-btn no-display" onclick="playAgain()">再玩一次</button>
-
-
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.5/jszip.min.js"></script>
   <script src="script-random.js"></script>
+  <script src="script-view.js"></script>
+  <script src="script-download.js"></script>
   <script src="script.js"></script>
 </body>
 

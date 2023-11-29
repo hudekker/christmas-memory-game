@@ -1,5 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+
+
+
 body {
   display: flex;
+  font-family: 'Kosugi Maru', sans-serif;
+
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -20,9 +26,11 @@ h1,
 .display-text {
   color: white;
   padding-top: 20px;
+  font-weight: normal;
   /* Set your desired text color */
   margin-top: 20px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  font-weight: normal;
   /* Add a text shadow */
   /* Adjust as needed */
 }
@@ -36,9 +44,6 @@ h1,
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 5px;
   margin-top: 5vh;
-
-  /* background-image: url('your-memory-game-background.jpg');
-  background-size: cover; */
 }
 
 .memory-card {
@@ -50,9 +55,7 @@ h1,
   margin: 10px;
   border: 2px solid black;
   border-radius: 8px;
-  /* adjust this value to control the level of rounding */
   box-sizing: border-box;
-  /* this ensures that the border size is included in the element's total width and height */
 }
 
 
@@ -75,7 +78,6 @@ h1,
   transform: rotateY(180deg);
 }
 
-/* Add styles for the .flip class */
 .memory-card.flip .front-face {
   transform: rotateY(0deg);
 }
@@ -98,24 +100,18 @@ h1,
   color: white;
   margin: auto;
   padding: 20px;
-  /* border: 1px solid rgba(255, 255, 255, 0.3); */
-
-  /* Adjusted border color with transparency */
   width: 100%;
-  /* Adjusted to 80% */
   height: 100%;
-  /* Adjusted to 80% */
   box-sizing: border-box;
-  /* Include padding and border in the element's total width and height */
 }
 
 /* Modal Content */
 .modal-content {
   background-color: rgba(255, 255, 255, .5);
   background-color: ivory;
-  color: cornflowerblue;
+  color: navy;
   font-size: 35px;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+  text-shadow: 0.25px 0.25px 0.25px rgba(125, 125, 125, 0.4);
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
@@ -144,22 +140,20 @@ h1,
 .close:hover,
 .close:focus {
   color: #000;
-
   text-decoration: none;
   cursor: pointer;
 }
 
 /* Button styling */
-.play-again-btn {
-  background-color: #4CAF50;
-  background-color: mediumspringgreen;
+.btn {
   /* Green background color */
   color: black;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.2);
   /* White text color */
   padding: 10px 20px;
   /* Padding around the text */
   font-size: 16px;
+  font-weight: normal;
   /* Font size */
   border: 2px solid #000;
   /* Black border */
@@ -173,19 +167,98 @@ h1,
   /* Smooth transitions on hover */
 }
 
+.play-again-btn {
+  background-color: #4CAF50;
+  background-color: mediumspringgreen;
+}
+
+.view-btn {
+  background-color: paleturquoise;
+  color: black;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.download-btn {
+  background-color: #008080;
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+}
+
 .play-again-btn:hover {
   background-color: #45a049;
   color: white;
-  /* Darker green color on hover */
   border-color: #333;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
-  /* Darker border color on hover */
 }
 
 .no-display {
   display: none;
 }
 
+/* CSS for positioning arrows */
+.arrow-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  /* Adjust the font size as needed */
+}
+
+.left-arrow {
+  left: 2%;
+}
+
+.right-arrow {
+  right: 2%;
+}
+
+
+/* Styles for the Image Gallery Modal */
+#galleryModal {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.gallery-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* .gallery-image {
+  max-width: 100%;
+  max-height: 100%;
+} */
+
+.gallery-image {
+  max-width: 80vw;
+  /* max-height: 150vh; */
+  /* display: block; */
+  margin: 0 auto;
+}
+
+.arrow-btn {
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  color: white;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.arrow-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
 
 /* Media query for screens with a maximum width of 600 pixels (smartphones) */
 @media (max-width: 600px) {

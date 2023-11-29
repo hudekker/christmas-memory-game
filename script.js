@@ -18,6 +18,24 @@ function closeModal() {
   document.getElementById('play-again-btn').classList.remove('no-display');
 }
 
+function checkForMatch() {
+  let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+
+  if (isMatch) {
+    disableCards();
+    updateGameStatus();
+    markAsPaired(); // Add this line to mark the cards as paired
+  } else {
+    unflipCards();
+  }
+}
+
+function markAsPaired() {
+  firstCard.classList.add('paired');
+  secondCard.classList.add('paired');
+}
+
+
 function updateGuessesDisplay() {
   document.getElementById('guesses-display').innerText = `猜測次數: ${numberOfGuesses}`;
 }
@@ -36,7 +54,7 @@ function updateGameStatus() {
 }
 
 function flipCard() {
-  if (lockBoard) return;
+  if (lockBoard || this.classList.contains('paired')) return;
   if (this === firstCard) return;
 
 
