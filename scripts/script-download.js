@@ -1,6 +1,5 @@
 async function download() {
   const zip = new JSZip();
-  const pictureFolder = 'assets';
 
   // Select all image elements with the class 'memory-card-img'
   const imageElements = document.querySelectorAll('.memory-game img');

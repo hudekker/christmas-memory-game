@@ -28,7 +28,7 @@ function chooseRandomPicture() {
 
 // Assuming you have a function to get the random picture (e.g., chooseRandomPicture)
 function setRandomBackground() {
-  const randomPicture = 'assets/' + chooseRandomPicture();
+  const randomPicture = 'assets-user/' + chooseRandomPicture();
   if (randomPicture) {
     document.body.style.backgroundImage = `url(${randomPicture})`;
   }

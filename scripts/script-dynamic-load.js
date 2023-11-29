@@ -1,6 +1,6 @@
 async function createImagePathArray() {
   try {
-    const response = await fetch('assets/pictures.json');
+    const response = await fetch('assets-user/pictures.json');
     const files = await response.json(); // Assuming the server returns a JSON array of file names
 
     if (files.length > 0) {
@@ -8,7 +8,7 @@ async function createImagePathArray() {
       const paths = files.map(file => file.url);
       return paths;
     } else {
-      console.error('No files found in the "assets" folder.');
+      console.error('No files found in the "assets-user" folder.');
       return [];
     }
   } catch (error) {

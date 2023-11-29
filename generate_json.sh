@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Navigate to the assets directory
-cd assets || exit
+cd assets-user || exit
 
 # Find all files with .png extension and store the names in an array
 files=(*.png)
@@ -11,7 +11,7 @@ json_array=()
 
 # Populate the array with JSON objects like {"url": "assets/p1.png"}, {"url": "assets/p2.png"}, etc.
 for ((i=0; i<${#files[@]}; i++)); do
-    json_object="{\"url\":\"assets/${files[i]}\"}"
+    json_object="{\"url\":\"assets-user/${files[i]}\"}"
     json_array+=("$json_object")
 done
 

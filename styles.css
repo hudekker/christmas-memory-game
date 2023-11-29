@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
 
-
-
 body {
   display: flex;
   font-family: 'Kosugi Maru', sans-serif;
@@ -12,7 +10,7 @@ body {
   margin: 0;
   background-color: #f0f0f0;
   /* background-image: url('background.webp'); */
-  background: url('Poem1.png') center center / cover no-repeat;
+  background: url('assets-app/poem1.png') center center / cover no-repeat;
   /* max-width: 80%;
   max-height: 80%; */
 
@@ -201,7 +199,6 @@ h1,
   top: 50%;
   transform: translateY(-50%);
   font-size: 24px;
-  /* Adjust the font size as needed */
 }
 
 .left-arrow {
