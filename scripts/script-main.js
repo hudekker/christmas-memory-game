@@ -132,11 +132,21 @@ function resetGame() {
 
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-  if (event.target.id == 'myModal') {
+// window.onclick = function (event) {
+//   if (event.target.id == 'myModal') {
+//     closeModal()
+//   }
+// }
+
+const myModal = document.getElementById('myModal');
+const modalContent = document.querySelector('.modal-content');
+
+myModal.addEventListener('click', function (event) {
+  if (event.target === myModal || event.target === modalContent) {
     closeModal()
   }
-}
+});
+
 // Simplified event listeners
 cards.forEach(card => {
   card.addEventListener('click', flipCard);
