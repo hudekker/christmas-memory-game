@@ -24,7 +24,7 @@ function checkForMatch() {
   if (isMatch) {
     disableCards();
     updateGameStatus();
-    markAsPaired(); // Add this line to mark the cards as paired
+
   } else {
     unflipCards();
   }
@@ -85,8 +85,13 @@ function checkForMatch() {
 }
 
 function disableCards() {
+  // Remove click and touch event listeners for both cards
   firstCard.removeEventListener('click', flipCard);
+  firstCard.removeEventListener('touchstart', flipCard);
   secondCard.removeEventListener('click', flipCard);
+  secondCard.removeEventListener('touchstart', flipCard);
+
+  markAsPaired();
 
   resetBoard();
 }
